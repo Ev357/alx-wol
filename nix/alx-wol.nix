@@ -1,4 +1,5 @@
 {
+  lib,
   stdenv,
   kernel,
 }:
@@ -25,4 +26,11 @@ stdenv.mkDerivation rec {
       mkdir -p $out/lib/modules/${kernel.modDirVersion}/extra
       cp alx.ko $out/lib/modules/${kernel.modDirVersion}/extra/
     '';
+
+  meta = {
+    description = "Atheros ALX Wake-on-LAN kernel module patch";
+    homepage = "https://github.com/Ev357/alx-wol/tree/main";
+    license = lib.licenses.gpl2Only;
+    platforms = lib.platforms.linux;
+  };
 }
