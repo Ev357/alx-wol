@@ -17,7 +17,7 @@
     packages = forAllSystems (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      alx-wol = pkgs.linuxPackages.callPackage ./nix/alx-wol.nix {};
+      alx-wol = pkgs.linuxPackages_latest.callPackage ./nix/alx-wol.nix {};
       default = self.packages.${system}.alx-wol;
     });
   };
